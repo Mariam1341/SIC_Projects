@@ -1,0 +1,38 @@
+import pygame, sys, os
+from pygame.locals import *
+
+WIDTH = 500
+HEIGHT = 500
+BLUE = (0,0,139)
+WHITE=(255,255,255)
+LINE_WIDTH = 1
+LINE_COLOR = (0, 0, 0)
+CROSS_COLOR = (255, 0, 0)
+SQUARE_SIZE = 71.5
+pygame.init()
+#border = pygame.display.set_mode((500,500))
+water = pygame.display.set_mode((WIDTH,HEIGHT))
+#land= pygame.display.set_mode((200,200))
+pygame.display.set_caption =('Tom and Gery')
+
+def draw_lines():
+    hori_lines =[73.5, 143, 214.5, 286, 357.5, 429]
+    for i in list:
+     pygame.draw.line(water, LINE_COLOR, (0, hori_lines[i]), (WIDTH, hori_lines[i]), LINE_WIDTH)
+     pygame.draw.line(water, LINE_COLOR, (hori_lines[i], 0), (SQUARE_SIZE + 2, HEIGHT), LINE_WIDTH)
+
+pygame.display.update()
+
+
+exit = False
+while not exit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit=True
+    #border.fill(WHITE)
+    water.fill(BLUE)
+    #land.fill(WHITE)
+    pygame.draw.rect(water, WHITE, [75,75, 355, 355])
+    draw_lines()
+    pygame.display.update()
+
